@@ -1,0 +1,61 @@
+@import '../../../assets/stylings/variables';
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $headerHeight;
+
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  max-width: $maxContentWidth;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    border: solid green;
+    width: 180px;
+    height: 50px;
+  }
+}
+
+.routes-container {
+  display: flex;
+  align-items: center;
+
+  a {
+    font-weight: 700;
+    line-height: 50px;
+
+    & + a {
+      margin-left: 20px;
+    }
+  }
+
+  @media(max-width: 599px) {
+    border: solid blue;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    a {
+      line-height: unset;
+      
+      & + a {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+    }
+  }
+}

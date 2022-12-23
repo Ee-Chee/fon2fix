@@ -1,0 +1,32 @@
+@import '../../../assets/stylings/variables';
+
+footer {
+  background-color: $lightTertiaryColor;
+  height: $headerHeight;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: $maxContentWidth;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.media-links-container {
+  display: flex;
+
+  a {
+    height: 35px;
+    
+    & + a {
+      margin-left: 20px;
+    }
+
+    svg {
+      border-radius: 5px;
+    }
+  }
+}
