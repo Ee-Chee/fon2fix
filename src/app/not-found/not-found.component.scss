@@ -1,0 +1,36 @@
+@import '../../assets/stylings/mixins';
+
+section {
+  background-color: $lightSecondaryColor;
+  padding: 80px 0;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+
+  @include setMaxWidthAndCenterContent;
+}
+
+h1 {
+  margin-top: 0;;
+}
+
+.button {
+  max-width: 250px;
+  text-align: center;
+  margin-bottom: 50px;
+
+
+  @include button;
+}
+
+img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.external-link {
+  font-size: 14px;
+}

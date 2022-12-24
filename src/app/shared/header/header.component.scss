@@ -1,22 +1,25 @@
 @import '../../../assets/stylings/variables';
+@import '../../../assets/stylings/mixins';
 
-nav {
+header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: $headerHeight;
 
-  background-color: #fff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: $secondaryColor;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  @include headerFooterFont;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  max-width: $maxContentWidth;
-  margin: 0 auto;
+
+  @include setMaxWidthAndCenterContent;
 }
 
 .logo {
@@ -24,9 +27,11 @@ nav {
   align-items: center;
 
   img {
-    border: solid green;
+    border: solid yellow;
     width: 180px;
     height: 50px;
+
+    object-fit: cover;
   }
 }
 
@@ -37,6 +42,7 @@ nav {
   a {
     font-weight: 700;
     line-height: 50px;
+    color: #fff;
 
     & + a {
       margin-left: 20px;
@@ -44,7 +50,6 @@ nav {
   }
 
   @media(max-width: 599px) {
-    border: solid blue;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;

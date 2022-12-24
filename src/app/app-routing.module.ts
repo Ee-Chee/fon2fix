@@ -26,6 +26,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./not-found/not-found.module').then((m) => m.NotFoundModule),
   },
+  { path: 'accessories', loadChildren: () => import('./accessories/accessories.module').then(m => m.AccessoriesModule) },
   {
     path: '**',
     redirectTo: 'not-found',

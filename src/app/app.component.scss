@@ -1,6 +1,11 @@
 @import '../assets/stylings/variables';
+@import '../assets/stylings/mixins';
 
 app-header {
   display: flex;
   height: $headerHeight;
+}
+
+main {
+  @include contentFont;
 }

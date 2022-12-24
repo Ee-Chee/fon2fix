@@ -1,0 +1,37 @@
+@import './variables';
+
+@mixin setMaxWidthAndCenterContent($verticalMargin: 0) {
+  margin: $verticalMargin auto;
+  max-width: $maxContentWidth;
+  padding: 0 10px;
+}
+
+@mixin headerFooterFont {
+  font-size: 18px;
+
+  @media(max-width: 599px) {
+    font-size: 16px;
+  }
+}
+
+@mixin contentFont {
+  font-size: 22px;
+
+  @media(max-width: 599px) {
+    font-size: 18px;
+  }
+}
+
+@mixin button {
+  padding: 10px 25px;
+
+  color: #fff;
+  background-color: $secondaryColor;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@mixin lightBlueSection {
+  background-color: $lightSecondaryColor;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
