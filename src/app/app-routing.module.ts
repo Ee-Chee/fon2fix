@@ -16,17 +16,17 @@ const routes: Routes = [
     loadChildren: () =>
       import('./contact/contact.module').then((m) => m.ContactModule),
   },
-  {
-    path: 'services',
-    loadChildren: () =>
-      import('./services/services.module').then((m) => m.ServicesModule),
-  },
+  // {
+  //   path: 'services',
+  //   loadChildren: () =>
+  //     import('./services/services.module').then((m) => m.ServicesModule),
+  // },
+  // { path: 'accessories', loadChildren: () => import('./accessories/accessories.module').then(m => m.AccessoriesModule) },
   {
     path: 'not-found',
     loadChildren: () =>
       import('./not-found/not-found.module').then((m) => m.NotFoundModule),
   },
-  { path: 'accessories', loadChildren: () => import('./accessories/accessories.module').then(m => m.AccessoriesModule) },
   {
     path: '**',
     redirectTo: 'not-found',
@@ -34,7 +34,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { 
+    scrollPositionRestoration: "enabled", // restore view to top on route change
+    anchorScrolling: 'enabled', // enable usage of fragment
+    scrollOffset: [0, 80] // header height is 80px. Used together with fragment
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

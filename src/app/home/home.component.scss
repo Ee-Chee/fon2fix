@@ -111,8 +111,6 @@
 }
 
 .section-3 {
-  border-top: solid $primaryColor;
-  border-bottom: solid $primaryColor;
   padding: 100px 0;
 
   @include lightBlueSection;
@@ -122,11 +120,13 @@
 
     h2 {
       margin-top: 0;
+      margin-left: 50px;
     }
 
     .brands-container {
       width: 100%;
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
 
@@ -138,4 +138,28 @@
       }
     }
   }
+}
+
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    margin-top: 50px;
+    max-width: 250px;
+
+    @include button;
+  }
+
+  h3 {
+    margin-top: 80px;
+  }
+
+  p {
+    text-align: center;
+    max-width: 800px;
+  }
+
+  @include setMaxWidthAndCenterContent(80px);
 }
