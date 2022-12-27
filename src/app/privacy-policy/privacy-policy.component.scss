@@ -1,0 +1,6 @@
+@import '../../assets/stylings/mixins';
+
+:host {
+  display: block;
+  @include setMaxWidthAndCenterContent(80px)
+}

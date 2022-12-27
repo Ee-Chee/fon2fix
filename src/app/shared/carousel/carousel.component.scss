@@ -1,0 +1,109 @@
+@import '../../../assets/stylings/variables';
+
+:host {
+  position: relative; // because overflow: hidden;
+
+  button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer; // cover svg
+    z-index: 10;
+
+    &.left {
+      right: calc(100% + 10px)
+    }
+
+    &.right {
+      left: calc(100% + 10px)
+    }
+
+    @media(max-width: 599px) {
+      top: 100%;
+      bottom: unset;
+      margin: unset;
+
+      &.left {
+        right: 90%
+      }
+  
+      &.right {
+        left: 90%
+      }
+    }
+  }
+
+  .selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    right: 0;
+    
+    .selection {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $tertiaryColor;
+      cursor: pointer;
+      text-align: center;
+
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      &.current-index {
+        background-color: $primaryColor;
+      }
+    }
+  }
+}
+
+.carousel {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+
+  /////////////////////////////
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .elem-container {
+    width: calc(100% - 40px); // 100% inherited from .carousel. 2 x 20px padding
+    flex-shrink: 0;
+    padding: 20px;
+
+    //////////////////////////////////////
+    display: flex;
+
+    img {
+      border: solid yellow;
+      width: 40%;
+      height: 300px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media(max-width: 599px) {
+      flex-direction: column;
+
+      img {
+        width: 100%;
+        margin-right: unset;
+      }
+    }
+  }
+}

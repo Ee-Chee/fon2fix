@@ -1,0 +1,39 @@
+<div class="carousel">
+  <ng-container *ngFor="let elem of elements; let first = first;">
+    <div class="elem-container" [@slideInOut]="{value: toggleState? 'slidingToggled1': 'slidingToggled2', params: {displacement: displacement}}">
+      <img *ngIf="first; else notFirst" #img [alt]="elem.title" [src]="elem.image" />
+      <ng-template #notFirst>
+        <img #img [alt]="elem.title" [attr.data-src]="elem.image"/>
+      </ng-template>
+      <!-- dont use <img #img [alt]="elem.title" [src]="first? elem.image:''" [attr.data-src]="elem.image"/> -->
+      <!-- src is not empty once binded => localhost:4200/ -->
+      
+      <div class="text-container">
+        <h3>
+          {{elem.title}}
+        </h3>
+        <p>
+          {{elem.description}}
+        </p>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<button class="left" (click)="backward()" type="button">
+  <svg>
+    <use href="#slide-left"></use>
+  </svg>
+</button>
+
+<button class="right" (click)="forward()" type="button">
+  <svg>
+    <use href="#slide-right"></use>
+  </svg>
+</button>
+
+<div class="selection-buttons">
+  <ng-container *ngFor="let elem of elements; let i = index;">
+    <div class="selection" (click)="selectSlide(i)" [class.current-index]="i === displacement"></div>
+  </ng-container>
+</div>

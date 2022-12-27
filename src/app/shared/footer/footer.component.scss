@@ -3,7 +3,8 @@
 
 footer {
   background-color: $lightTertiaryColor;
-  height: $headerHeight;
+  // height: $headerHeight;
+  padding: 20px 0;
 
   @include headerFooterFont;
 }
@@ -14,7 +15,29 @@ footer {
   align-items: center;
   height: 100%;
 
-  @include setMaxWidthAndCenterContent;
+  @include setMaxWidthAndCenterContent();
+
+  @media(max-width: 599px) {
+    flex-direction: column;
+
+    .rights-container {
+      order: 2;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  }
+}
+
+.rights-container {
+  display: flex;
+  text-align: center;
+  font-size: 16px;
+
+  a {
+    & + a {
+      margin-left: 10px;
+    }
+  }
 }
 
 .media-links-container {

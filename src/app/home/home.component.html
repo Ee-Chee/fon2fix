@@ -16,9 +16,7 @@
 <section class="section-1">
   <h2>Smartphone Accessories</h2>
 
-  <div class="carousel-container">
-    Carousel container here
-  </div>
+  <app-carousel *ngIf="carouselElems.length > 0" class="carousel-container" [elements]="carouselElems"></app-carousel>
 
   <a class="button" routerLink="/contact">Find out more</a>
 </section>
