@@ -6,7 +6,10 @@ import { NotFoundComponent } from './not-found.component';
 const routes: Routes = [{ 
   path: '', 
   component: NotFoundComponent ,
-  data: metaTexts['notFound']
+  data: {
+    metaTagsData: metaTexts['notFound'],
+    metaSchemaData: []
+  }
 }];
 
 @NgModule({

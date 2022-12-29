@@ -2,8 +2,8 @@ import { SeoMetaData } from "./interfaces";
 
 export const metaTexts: { [key:string]: SeoMetaData} = {
   home: {
-    title: 'FON2FIX - Smartphone Repair Services & Accessories Solutions',
-    description:
+    title: 'FON2FIX - Smartphone Repair Services & Accessories Solutions', // less than 60
+    description: // less than 150
       'FON2FIX - Smartphone specialist in repair services & accessories - Kedai Pakar Membaiki Telefon Pintar di Taman Sri Gombak, Batu Caves.',
     image: '/assets/images/main-image.png'
   },

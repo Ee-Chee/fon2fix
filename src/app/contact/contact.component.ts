@@ -13,8 +13,10 @@ export class ContactComponent {
 
   constructor(private route: ActivatedRoute) {
     this.route.data.pipe(take(1)).subscribe((data) => {
-      this.mainTitle = data['title'];
-      this.mainDescription = data['description'];
+      const routeData = data['metaTagsData'];
+
+      this.mainTitle = routeData['title'];
+      this.mainDescription = routeData['description'];
     });
   }
 }

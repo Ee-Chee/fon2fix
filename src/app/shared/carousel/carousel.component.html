@@ -20,13 +20,13 @@
   </ng-container>
 </div>
 
-<button class="left" (click)="backward()" type="button">
+<button class="left" (click)="selectSlide(displacement - 1)" type="button" [disabled]="displacement <= 0">
   <svg>
     <use href="#slide-left"></use>
   </svg>
 </button>
 
-<button class="right" (click)="forward()" type="button">
+<button class="right" (click)="selectSlide(displacement + 1)" type="button" [disabled]="displacement >= elements.length - 1">
   <svg>
     <use href="#slide-right"></use>
   </svg>

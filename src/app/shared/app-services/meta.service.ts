@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Data, NavigationEnd, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { filter, switchMap, take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { SeoMetaData } from "../interfaces";
@@ -19,6 +20,7 @@ import { SeoMetaData } from "../interfaces";
   providedIn: 'root'
 })
 export class MetaService {
+  schemaData = new Subject<any>();
 
   constructor(
     private router: Router,
@@ -35,7 +37,11 @@ export class MetaService {
           return activatedChild.data.pipe(take(1));
         })
       )
-      .subscribe((routeData) => {
+      .subscribe((data) => {
+        const routeData = data['metaTagsData'];
+
+        this.schemaData.next(data['metaSchemaData']);
+
         // title, required
         this.titleService.setTitle(routeData['title']);
         this.meta.updateTag({ property: 'og:title', content: routeData['title'] });
@@ -99,7 +105,7 @@ export class MetaService {
     }
   }
 
-  updateCanonicalUrl(url:string){
+  updateCanonicalUrl(url:string) {
     const head = this.document.getElementsByTagName('head')[0];
     let element: HTMLLinkElement | null = this.document.querySelector(`link[rel='canonical']`) || null;
     if (element === null) {

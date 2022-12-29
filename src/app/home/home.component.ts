@@ -42,8 +42,10 @@ export class HomeComponent {
 
   constructor(private route: ActivatedRoute) { 
     this.route.data.pipe(take(1)).subscribe(data => {
-      this.mainTitle = data['title'],
-      this.mainImage = data['image']
+      const routeData = data['metaTagsData'];
+
+      this.mainTitle = routeData['title'],
+      this.mainImage = routeData['image']
     })
   }
 }
