@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
+  mainTitle!: string;
+  mainImage!: string;
+
   carouselElems = [
     {
       title: 'a',
@@ -35,10 +40,10 @@ export class HomeComponent implements OnInit {
     }
   ]
 
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute) { 
+    this.route.data.pipe(take(1)).subscribe(data => {
+      this.mainTitle = data['title'],
+      this.mainImage = data['image']
+    })
   }
-
 }
