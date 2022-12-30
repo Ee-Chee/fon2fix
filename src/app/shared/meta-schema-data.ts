@@ -6,9 +6,9 @@ export const metaSchemaData = {
     "@context": "https://schema.org/",
     "@type": "WebSite",
     "name": metaTexts['home'].title,
-    "url": environment.baserUrl,
+    "url": environment.baseUrl,
     "description": metaTexts['home'].description,
-    "image": environment.baserUrl + "/assets/images/fon2fix-logo.png",
+    "image": environment.baseUrl + "/assets/images/fon2fix-logo.png",
     "alternateName": "FON2FIX Smartphone Specialist",
     "genre": "Smartphone Repair Services and Accessories",
     "headline": "Smartphone Repair Services and Accessories",
@@ -17,7 +17,7 @@ export const metaSchemaData = {
   company: { 
     "@context" : "https://schema.org",
     "@type" : "Organization",
-    "url" : environment.baserUrl,
+    "url" : environment.baseUrl,
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "MY",
@@ -29,7 +29,7 @@ export const metaSchemaData = {
     "email": "endie.leng@fon2fix.com.my",
     "founder": "Endie Leng",
     "foundingLocation": "Prima Seri Gombak",
-    "logo": environment.baserUrl + "/assets/images/fon2fix-logo.png",
+    "logo": environment.baseUrl + "/assets/images/fon2fix-logo.png",
     "telephone": "+601129190338",
   },
   shop: {
@@ -55,7 +55,7 @@ export const metaSchemaData = {
         "addressRegion": "Selangor",
         "postalCode": "68100"
       },
-      "image": environment.baserUrl + "/assets/images/fon2fix-logo.png"
+      "image": environment.baseUrl + "/assets/images/fon2fix-logo.png"
     },
     "areaServed": {
       "@type": "State",

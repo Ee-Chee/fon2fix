@@ -62,9 +62,9 @@ export class MetaService {
         }
 
         if (routeData['image']) {
-          this.meta.updateTag({ property: 'og:image', content: environment.baserUrl + routeData['image'] });
-          this.meta.updateTag({ name: 'twitter:image', content: environment.baserUrl + routeData['image'] });
-          this.meta.updateTag({ itemprop: 'image', content: environment.baserUrl + routeData['image'] }, "itemprop='image'");
+          this.meta.updateTag({ property: 'og:image', content: environment.baseUrl + routeData['image'] });
+          this.meta.updateTag({ name: 'twitter:image', content: environment.baseUrl + routeData['image'] });
+          this.meta.updateTag({ itemprop: 'image', content: environment.baseUrl + routeData['image'] }, "itemprop='image'");
         } else {
           this.meta.removeTag("name='image'");
           this.meta.removeTag("property='og:image'");
@@ -79,7 +79,7 @@ export class MetaService {
           this.meta.removeTag("name='twitter:card'");
         } else {
           // Additional metatags for Facebook
-          this.meta.updateTag({ property: 'og:url', content: environment.baserUrl + this.router.url });
+          this.meta.updateTag({ property: 'og:url', content: environment.baseUrl + this.router.url });
           this.meta.updateTag({ property: 'og:type', content: 'website' });
 
           // Additional metatags for Twitter
@@ -90,9 +90,9 @@ export class MetaService {
         }
 
         if(!routeData['canonicalLink']) {
-          this.updateCanonicalUrl(environment.baserUrl + this.router.url)
+          this.updateCanonicalUrl(environment.baseUrl + this.router.url)
         } else {
-          this.updateCanonicalUrl(environment.baserUrl + routeData['canonicalLink'])
+          this.updateCanonicalUrl(environment.baseUrl + routeData['canonicalLink'])
         }
       })
   }
