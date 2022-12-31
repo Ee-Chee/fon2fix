@@ -17,6 +17,8 @@ export const metaSchemaData = {
   company: { 
     "@context" : "https://schema.org",
     "@type" : "Organization",
+    "name": "FON2FIX Smartphone Specialist",
+    "image": environment.baseUrl + "/assets/images/fon2fix-logo.png",
     "url" : environment.baseUrl,
     "address": {
       "@type": "PostalAddress",
@@ -35,6 +37,8 @@ export const metaSchemaData = {
   shop: {
     "@context": "https://schema.org/",
     "@type": "MobilePhoneStore",
+    "name": "FON2FIX Smartphone Specialist",
+    "image": environment.baseUrl + "/assets/images/fon2fix-logo.png",
     "currenciesAccepted": "MYR",
     "openingHours": "Mo-Sa, 10:00-20:00",
     "paymentAccepted": "Cash, Credit Card",

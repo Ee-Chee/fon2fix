@@ -9,7 +9,7 @@ header {
   height: $headerHeight;
   z-index: 100;
 
-  background-color: $secondaryColor;
+  background-color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   @include headerFooterFont;
@@ -28,11 +28,10 @@ header {
   align-items: center;
 
   img {
-    border: solid yellow;
     width: 180px;
     height: 50px;
 
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
@@ -42,7 +41,7 @@ header {
 
   a {
     line-height: 50px;
-    color: #fff;
+    color: $primaryColor;
 
     & + a {
       margin-left: 20px;

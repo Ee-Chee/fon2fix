@@ -1,13 +1,13 @@
 @import './variables';
 
-@mixin setMaxWidthAndCenterContent($verticalMargin: 0) {
+@mixin setMaxWidthAndCenterContent($verticalMargin: 0, $verticalPadding: 0) {
   margin: $verticalMargin auto;
   max-width: $maxContentWidth;
-  padding: 0 30px;
+  padding: $verticalPadding 30px;
 
 
   @media(max-width: 599px) {
-    padding: 0 10px;
+    padding: $verticalPadding 10px;
   }
 }
 

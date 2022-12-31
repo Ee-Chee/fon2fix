@@ -1,18 +1,25 @@
 @import '../../assets/stylings/variables';
 @import '../../assets/stylings/mixins';
 
+:host {
+  display: block;
+  background-color: $lightSecondaryColor;
+  padding: 80px 0;
+}
+
 .main-section {
   display: flex;
+  margin-bottom: 80px !important;
 
-  @include setMaxWidthAndCenterContent(80px);
+  @include setMaxWidthAndCenterContent();
 
   img {
-    border: solid yellow;
     width: 40%;
     height: 500px;
     margin-right: 20px;
-
     object-fit: cover;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   .text-container {
@@ -58,10 +65,9 @@
   @include setMaxWidthAndCenterContent;
 
   img {
-    border: solid yellow;
     width: 100%;
-    height: 500px;
-    object-fit: cover;
+    
+    object-fit: contain;
   }
 
   .points-container {
@@ -136,10 +142,9 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 20px;
 
       img {
-        border: solid yellow;
         width: 250px;
         height: 100px;
         object-fit: contain;

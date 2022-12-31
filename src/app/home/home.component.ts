@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
+import { products } from '../shared/products';
 
 @Component({
   selector: 'app-home',
@@ -11,34 +12,7 @@ export class HomeComponent {
   mainTitle!: string;
   mainImage!: string;
 
-  carouselElems = [
-    {
-      title: 'a',
-      description: '1',
-      image: 'assets/images/first.png'
-    },
-    {
-      title: 'b',
-      description: '2'
-    },
-    {
-      title: 'c',
-      description: '3',
-      image: 'assets/images/dummy.png'
-    },
-    {
-      title: 'd',
-      description: '4'
-    },
-    {
-      title: 'e',
-      description: '5'
-    },
-    {
-      title: 'f',
-      description: '6'
-    }
-  ]
+  carouselElems = products;
 
   constructor(private route: ActivatedRoute) { 
     this.route.data.pipe(take(1)).subscribe(data => {
